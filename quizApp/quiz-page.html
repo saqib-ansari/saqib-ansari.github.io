@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Quiz Page </title>
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<script scr="./jquery-3.3.1.js"></script>
+	<script src="./js/jquery.js"></script>
+	<!-- custom -->
+	<link rel="stylesheet" href="./custom-style.css">
+</head>
+<body>
+<div class="container-fluid">
+	<nav class="navbar navbar-expand-md navbar-dark bg-danger row">
+	  <a class="navbar-brand" href="index.html">Quiz App</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+	    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+	      <li class="nav-item active ml-2 mt-1 text-light">
+	        Quiz
+	      </li>
+	    </ul>
+	    <span id="for-login"> 
+	    	<!-- <img class="rounded-circle user-img" alt="user-img" src="building.jpg"> -->
+	    	<a class="text-white" href="#" data-toggle="modal" data-target="#login-modal">Log In / Sign Up</a>
+	    </span>
+	    <span id="loggedin">
+	    	<!-- <img class="rounded-circle user-img" alt="user-img" src="building.jpg"> -->
+	    	<a class="text-white" href="#" id="logged-username" data-toggle="dropdown"
+	    	data-target="#dropdown-profile"> </a>
+	    	
+	    	<!-- <div class="dropdown" id="dropdown-profile">
+	    		<div class="dropdown-menu">
+	    			<li class="dropdown-item" id="logout"> Log Out </li>
+	    		</div>
+	    	</div> -->
+	    </span>
+	  </div>
+	</nav>
+
+	<div class="row bg-white justify-content-between shadow">
+		<div class="col-auto">
+			<h1 class="display-4 text-danger" id="heading"> QUIZ </h1>
+		</div>
+	</div>
+	<!-- content -->
+	<div class="row" id="demo">
+		<div class="col-8 mt-5" id="quiz-modal">
+			<!-- ========================     question ===============================-->
+			<h1 class="ml-2 mb-4 font-weight-light col-12" id="question"> </h1>
+			
+			<!-- ===============      MULTIPLE CHOICE QUESTIONS      ================= -->
+			<!-- <div id="mcq-div" class="ml-3 ml-sm-4">
+				<div class="form-row mb-2">
+				    <div class="col-auto">
+				    	<div class="custom-control custom-checkbox">
+						  <input type="checkbox" class="custom-control-input local-cb" id="check1">
+						  <label class="custom-control-label" for="check1"> A </label>
+						</div>
+				    </div>
+				    <div class="col ml-3">
+				    	<h5 id="option1"> </h5>
+				    </div>
+				</div>
+				<div class="form-row mb-2">
+				    <div class="col-auto">
+				    	<div class="custom-control custom-checkbox">
+						  <input type="checkbox" class="custom-control-input local-cb" id="check2">
+						  <label class="custom-control-label" for="check2"> B </label>
+						</div>
+				    </div>
+				    <div class="col ml-3">
+				    	<h5 id="option2"> </h5>
+				    </div>
+				</div>
+				<div class="form-row mb-2">
+				    <div class="col-auto">
+				    	<div class="custom-control custom-checkbox">
+						  <input type="checkbox" class="custom-control-input local-cb" id="check3">
+						  <label class="custom-control-label" for="check3"> C </label>
+						</div>
+				    </div>
+				    <div class="col ml-3">
+				    	<h5 id="option3"> </h5>
+				    </div>
+				</div>
+				<div class="form-row mb-2">
+				    <div class="col-auto">
+				    	<div class="custom-control custom-checkbox">
+						  <input type="checkbox" class="custom-control-input local-cb" id="check4">
+						  <label class="custom-control-label" for="check4"> D </label>
+						</div>
+				    </div>
+				    <div class="col ml-3">
+				    	<h5 id="option4"> </h5>
+				    </div>
+				</div>
+				</div> -->
+				<!-- ===============      SINGLE CHOICE QUESTIONS      ================= -->
+				<div id="scq-div" class="ml-3 ml-sm-5">
+					<div class="form-row mb-2">
+					    <div class="col-auto">
+					    	<div class="custom-control custom-radio">
+							  	<input type="radio" id="radio-option-1" name="radio-options" class="
+							  		custom-control-input" value="0">
+							  	<label class="custom-control-label" for="radio-option-1"> A </label>
+							</div>
+					    </div>
+					    <div class="col ml-3">
+				    		<h5 id="option1"> </h5>
+				    	</div>
+					</div>
+					<div class="form-row mb-2">
+					    <div class="col-auto">
+					    	<div class="custom-control custom-radio">
+							  	<input type="radio" id="radio-option-2" name="radio-options" class="
+							  		custom-control-input" value="1">
+							  	<label class="custom-control-label" for="radio-option-2"> B </label>
+							</div>
+					    </div>
+					    <div class="col ml-3">
+				    		<h5 id="option2"> </h5>
+				    	</div>
+					</div>
+					<div class="form-row mb-2">
+					    <div class="col-auto">
+					    	<div class="custom-control custom-radio">
+							  	<input type="radio" id="radio-option-3" name="radio-options" class="
+							  		custom-control-input" value="2">
+							  	<label class="custom-control-label" for="radio-option-3"> C </label>
+							</div>
+					    </div>
+					    <div class="col ml-3">
+				    		<h5 id="option3"> </h5>
+				    	</div>
+					</div>
+					<div class="form-row mb-2">
+					    <div class="col-auto">
+					    	<div class="custom-control custom-radio">
+							  	<input type="radio" id="radio-option-4" name="radio-options" class="
+							  		custom-control-input" value="3">
+							  	<label class="custom-control-label" for="radio-option-4"> D </label>
+							</div>
+					    </div>
+					    <div class="col ml-3">
+				    		<h5 id="option4"> </h5>
+				    	</div>
+					</div>
+				</div>
+
+			<div class="row  mt-5 ml-5">
+				<button class="btn btn-default" id="next"> Next </button>
+				<button class="btn btn-default ml-5" id="submit"> Submit </button>
+			</div>
+		</div>
+		<!-- result -->
+		<div class="col-12 col-sm-10 col-md-8 col-lg-6 mt-4 mx-auto" id="result-modal">
+			<table class="table shadow">
+				<thead class="thead-dark">
+					<tr>
+						<th scope="col" colspan="2" class="text-center font-weight-light h3"> Result </th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="table-primary shadow-lg">
+						<th> Attempted Questions </th>
+						<td id="attempted-questions"> 10 </td>
+					</tr>
+					<tr class="table-success shadow">
+						<th> Correct Answers </th>
+						<td id="correct-answers"> 10 </td>
+					</tr>
+					<tr class="table-danger">
+						<th> Wrong Answers </th>
+						<td id="wrong-answers"> 10 </td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+	
+
+
+ </div>
+
+
+
+	<script src="custom-script.js"></script>
+	<script src="localStorage-script.js"></script>
+</body>
+
+	<script src="js/popper.js"> </script>
+	<script src="js/bootstrap.js"> </script>
+	<script>
+		// to get the indexes on which loops need to run
+		getTitleSubtitle(data);
+		console.log(data)
+
+		// console.log("he", titleIndexes, keyIndexes, typeIndexes)
+
+		var question = $("#question");
+		var option1;
+		var option2;
+		var option3;
+		var option4;
+
+		// ========================   GET KEY WHICH COMES WITH URL    ============================
+		// get key name comes with url..
+		var keyFromUrl = window.location.search;
+		// split string by '=' operator.. gives array..
+		var keyArr1 = keyFromUrl.split("=");
+		// key we need is on index 1... store it in var 'keyRec'...
+		var keyRec = keyArr1[1];
+		// split key to get title, subtitle, typeOf question...
+		var keyArr2 = keyRec.split("~");
+		var title = keyArr2[0];
+		var subtitle = keyArr2[1];
+		var questionType = keyArr2[2];
+
+
+		// ========================    GET INDEXES ARRAY ACCORDING TO THE KEY   ==================
+		// get the array of indexes into "indexArr" from indexes object according to the key...
+		// indexArr is the array of indexes of questions that user wants to play..
+		var indexArr;
+		function getIndexArr(){
+			if(title != ""){
+				console.log("hello")
+				if(subtitle != ""){
+					var key = title + "~" + subtitle;
+					indexArr = keyIndexes[key];
+				}else {
+					var key = title;
+					indexArr = titleIndexes[key];
+				}
+				// to remove indexes of questions of other types...
+				if(questionType != ""){
+					for(var i = 0; i < indexArr.length;){
+						var obj = data[indexArr[i]];
+						if(obj.questionType != questionType){
+							indexArr.splice(i, 1);
+						}else{
+							i++;
+						}
+					}
+				}
+			}else {
+				var key = questionType;
+				indexArr = typeIndexes[key];
+			}
+			
+		}
+
+		var i = 0;
+
+		var qType = ""; // to get the answers by user according to type of question..
+		var attempted = 0; // to store no. of uestions attempted
+		var userAnswers = []; // array to store answers from user..
+		var dataAnswers= []; // array to store answers from localStorage..
+		var wrongAnswers= 0; // no. of wrong answers..
+		var correctAnswers = 0; // no. of correct asnwers of user..
+
+		function onNext(indexArr){
+			$("#mcq-div, #scq-div").hide();
+			for(i; i < indexArr.length;){
+				var obj = data[indexArr[i]];
+				$("#" + obj.questionType + "-div").show();
+				changeOptionRef(obj.questionType);
+					$("#question").html(obj.question);
+					$(option1).html(obj.option1);
+					$(option2).html(obj.option2);
+					$(option3).html(obj.option3);
+					$(option4).html(obj.option4);
+					dataAnswers.push(obj.cA);
+					qType = obj.questionType;
+					
+					break;
+			}
+				i++
+		}
+
+		// run on window load.. to get data and show 1st question...
+		getIndexArr();
+		onNext(indexArr);
+
+
+		// functions to run on click next button..
+		$("#next").click(function(){
+			// to hide question and options from page..
+				// and to show results..
+				if(i == indexArr.length){
+					console.log("the end")
+					userAnswers.push(getUserAnswer());
+					alert("you played all questions.. click OK to check result.")
+					getResult();
+					showResult();
+				}else{
+					userAnswers.push(getUserAnswer());
+					onNext(indexArr);
+				}
+		});
+
+
+		//  to get answers by user....
+		function getUserAnswer(){
+			attempted += 1; // to count no. of questions attemted...
+			if(qType == "mcq"){
+				var cA = [];
+				// store a ref of checkboxes in a variable
+				var x = $("input[type='checkbox']");
+				for(var i = 0; i < x.length; i++){
+					if(x[i].checked){
+						cA.push(i);
+					}
+				}
+				return cA;
+			}else if (qType == "scq"){
+				var x = $("input[name='radio-options']:checked").val();
+				return x;
+			}
+		}
+
+		// on submit get and show results....
+		$("#submit").click(function(){
+			var confirmation = confirm("Are you sure to End Quiz now.");
+			if(confirmation == true){
+				getResult();
+				showResult();
+			}else if(confirmation == false){
+				alert("you are returned to the Quiz");
+			}
+		})
+		function getResult(){
+			for(var i = 0; i < attempted; i++){
+				if(typeof(dataAnswers[i]) == "object"){ //if answers is in array.. loop on them to check answers...
+					var dA = dataAnswers[i]; // array of answers of multiple choice.. from data answers..
+					var uA = userAnswers[i]; // array of answers of multiple choice.. from user answers..
+					var mcqCA = 0;
+					var mcqWA = 0;
+					for(var s = 0; s < dataAnswers[i].length; s++){
+						if(dA[s] == uA[s]){
+							mcqCA += 1;
+						}else if(dA[s] != uA[s]){
+							mcqWA += 1;
+						}
+					}
+					if(mcqCA >= mcqWA){
+						correctAnswers += 1;
+					}else if(mcqCA < mcqWA){
+						wrongAnswers += 1;
+					}
+				}else if(dataAnswers[i] != "obect"){ // if answers is number or string simply check answer..
+					if(userAnswers[i] == dataAnswers[i]){
+						console.log(userAnswers[i], dataAnswers[i])
+						correctAnswers += 1;
+					}else if(userAnswers[i] != dataAnswers[i]){
+						console.log(userAnswers[i], dataAnswers[i])
+						wrongAnswers += 1;
+					}
+				}
+			}
+			console.log(correctAnswers, wrongAnswers, attempted);
+			// attach result with the html..
+			$("#attempted-questions").text(attempted);
+			$("#correct-answers").text(correctAnswers);
+			$("#wrong-answers").text(wrongAnswers);
+		}
+
+		function showResult(){
+			$("#quiz-modal").hide();
+			$("#result-modal").show();
+		}
+
+		// var key = "";
+		// if(title != ""){
+		// 	if(subtitle != ""){
+		// 		key = title + "~" + subtitle;
+		// 		function keyLoop(key){
+		// 			var x = keyIndexes[key];
+		// 			for()
+		// 		}
+		// 	}
+		// }
+
+
+
+// if(questionType != ""){
+				// 	if(questionType == obj.questionType){
+				// 		$("#" + obj.questionType + "-div").show();
+				// 		changeOptionRef(obj.questionType);
+				// 			$("#question").html(obj.question);
+				// 			$(option1).html(obj.option1);
+				// 			$(option2).html(obj.option2);
+				// 			$(option3).html(obj.option3);
+				// 			$(option4).html(obj.option4);
+				// 			break;
+				// 	}else{
+				// 		i++
+				// 	}
+				// }else{
+
+				// }
+					// disable next button on last question..
+	</script>
+</html>
+
+
+
+
+

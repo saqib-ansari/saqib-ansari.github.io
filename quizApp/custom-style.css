@@ -1,0 +1,120 @@
+a:hover{
+	text-decoration: none;
+}
+.my-btn-full{
+	display: block;
+	width: 100%;
+	height: auto;
+	text-align: center;
+}
+.my-btn-lg{
+	padding: 10px;
+	font-size: 20px;
+}
+.user-img{
+	max-width: 30px;
+	max-height: 30px;
+	margin-right: 5px;
+	overflow: hidden;
+	background-color: lightgray;
+}
+/*------------     sidebar    -------------*/
+#sidebar{
+	width: 100%;
+	height: 700px;
+}
+#sidebar h4{
+	letter-spacing: 3px;
+	word-spacing: 3px;
+	padding-left: 20px;
+	border-bottom: 1px solid grey;
+}
+#sidebar button{
+	display: block;
+	width: 100%;
+	height: auto;
+	text-align: left;
+	font-size: 18px;
+	padding: 5px;
+	padding-left: 15px;
+	border: 1px outset grey;
+	color: lightgrey;
+	cursor: pointer;
+	outline: none;
+}
+#sidebar .drop-menu{
+	width: 100%;
+	padding: 0px;
+	padding-left: 15px;
+}
+#sidebar .drop-menu li{
+	display: block;
+	width: 100%;
+	border-left: 0.5px inset grey;
+	padding: 5px;
+	padding-left: 15px;
+	color: lightgrey;
+	cursor: pointer;
+	list-style-type: none;
+}
+#sidebar .drop-menu li:hover{
+	background: rgb(25,25,35);
+}
+
+.modal{
+	background: transparent;
+	margin: auto;
+	font-family: "lucida console";
+}
+.modal .header{
+	opacity: 0.4;
+	font-family: monospace;
+	cursor: pointer;
+}
+.modal .active{
+	padding-bottom: 8px;
+	border-bottom: 2px ridge red;
+	opacity: 1;
+}
+/* hide signup by default */
+#signup{
+	display: none;
+}
+#loggedin{
+	display: none;
+}
+
+th, tr{
+	font-weight: normal;
+	color: black;
+}
+#result-modal{
+	display: none;
+}
+
+
+.shadow-sm {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+.shadow {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.shadow-lg {
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+.shadow-xl {
+  box-shadow: 0 0.4rem 10rem red !important;
+}
+
+.shadow-none {
+  box-shadow: none !important;
+}
+
+.drop-menu-left {
+	min-width: auto;
+	right: 0;
+	left: auto;
+}

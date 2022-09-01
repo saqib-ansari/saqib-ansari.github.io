@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> quiz </title>
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<script scr="./jquery-3.3.1.js"></script>
+	<script src="./js/jquery.js"></script>
+	<!-- custom -->
+	<link rel="stylesheet" href="./custom-style.css">
+</head>
+<body>
+	<div class="container-fluid">
+			<nav class="navbar navbar-expand-md navbar-dark bg-danger row">
+			  <a class="navbar-brand text-white" href="index.html">Quiz App</a>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+			    <span class="navbar-toggler-icon"></span>
+			  </button>
+			  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+			    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+			      <li class="nav-item ml-2 mt-1 text-light">
+			        Home
+			      </li>
+			    </ul>
+			    <span id="for-login"> 
+			    	<!-- <img class="rounded-circle user-img" alt="user-img" src="building.jpg"> -->
+			    	<a class="text-white" href="#" data-toggle="modal" data-target="#login-modal">Log In / Sign Up</a>
+			    </span>
+			    <span id="loggedin">
+			    	<!-- <img class="rounded-circle user-img" alt="user-img" src="building.jpg"> -->
+			    	<a class="text-white" href="#" id="logged-username" data-toggle="dropdown"
+			    	data-target="#dropdown-profile"> </a>
+			    	
+			    	<div class="dropdown" id="dropdown-profile">
+			    		<div class="dropdown-menu drop-menu-left">
+			    			<li class="dropdown-item" id="logout"> Log Out </li>
+			    		</div>
+			    	</div>
+			    </span>
+			  </div>
+			</nav>
+			<!-- content goes here -->
+			<div class="row mt-4">
+				<div class="col-12">
+					<div class="card-deck mb-sm-4">
+					  <div class="card">
+					    <a href="create-quiz.html" class="card-body text-center bg-danger">
+					      <h1 class="card-text my-md-5 font-weight-light text-light" id="quiz-section"> Create Quiz </h1>
+					    </a>
+					  </div>
+					  <div class="card">
+					    <a href="quiz-section.html" class="card-body text-center bg-dark">
+					      <h1 class="card-text my-md-5 font-weight-light text-light" id="learn-zone"> Quiz Section </h1>
+					    </a>
+					  </div>
+					  <!-- <div class="card">
+					    <a href="#" class="card-body text-center bg-dark">
+					      <h1 class="card-text my-md-5 font-weight-light text-light" id="quick-quiz"> Quick Quiz </h1>
+					    </a>
+					  </div> -->
+					</div>
+					
+				</div>
+			</div>
+
+			<!-- //////////////////////////////////////////////////////////////////////////// -->
+			<!-- modal for login -->
+
+			<div id="login-modal" class="modal">
+				<div class="modal-dialog">
+				<div class="modal-content bg-danger">
+					<div class="row m-0 my-2 mb-3">
+						<div class="col-6 h3 header active shadow-sm" for="login"> Log In </div>
+						<div class="col-6 h3 header shadow-sm" for="signup"> Sign Up </div>
+					</div>
+					<div class="row m-0">
+				        <!-- log in -->
+				        <form class="col-12" id="login">
+				          <div class="form-group">
+				            <label for="user-id" class="">E-mail:</label>
+				            <input type="text" class="form-control" id="login-email">
+				          </div>
+				          <div class="form-group">
+				            <label for="user-password" class="">Password:</label>
+				            <input type="password" class="form-control" id="login-password">
+				          </div>
+				          <button type="button" class="btn btn-danger my-3 shadow" data-dismiss="modal">Close</button>
+				          <button type="button" id="login-btn" class="btn btn-danger shadow float-right my-3"> Log In </button>
+				        </form>
+						<!-- sign up -->
+						<form class="col-12" id="signup">
+				          <div class="form-group">
+				            <label for="user-name" class="">Name:</label>
+				            <input type="text" class="form-control" id="signup-name">
+				          </div>
+				          <div class="form-group">
+				            <label for="signup-id" class="">E-mail:</label>
+				            <input type="text" class="form-control" id="signup-email">
+				          </div>
+				          <div class="form-group">
+				            <label for="signup-password" class="">Password:</label>
+				            <input type="password" class="form-control" id="signup-password">
+				          </div>
+				          <button type="button" class="btn btn-danger my-3 shadow" data-dismiss="modal">Close</button>
+				          <button type="button" id="signup-btn" class="btn btn-danger shadow float-right my-3"> Sign Up </button>
+				        </form>
+					</div>
+
+				</div>
+			</div>
+			</div>
+
+
+		</div>
+
+
+
+
+
+		
+		<script src="custom-script.js"></script>
+		<script src="localStorage-script.js"></script>
+</body>
+
+	<script src="js/popper.js"> </script>
+	<script src="js/bootstrap.js"> </script>
+</html>

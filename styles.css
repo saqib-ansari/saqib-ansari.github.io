@@ -27,21 +27,27 @@
 
 
 /* ============   Main Section  ============= */
+main {
+  display: flex;
+  flex-direction: column;
+}
 .flex-row {
   display: flex;
   flex-direction: row;
   padding: 20px;
+  /* border: 1px solid red; */
 }
 
 .card {
-  padding: 50px;
+  flex-grow: 1;
+  width: 10px; /* just for equal width elements with flex grow */
+  padding: 50px 0;
   background: linear-gradient(
     45deg,
     rgba(25, 2, 156, 0.918),
     rgba(7, 121, 197, 0.616)
   );
   box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
-  flex-grow: 1;
   margin: 0 20px;
   text-align: center;
 }
@@ -55,11 +61,24 @@
   white-space: nowrap;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 700px) {
   .flex-row {
     flex-direction: column;
   }
+  .flex-row:not(:first-child) {
+    padding-top: 0px;
+  }
   .card {
     margin: 20px 0;
+    width: 100%;
+  }
+  .card:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .card a h1 {
+    font-size: 25px;
   }
 }

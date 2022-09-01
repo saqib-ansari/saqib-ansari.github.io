@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> quiz </title>
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<script scr="./jquery-3.3.1.js"></script>
+	<script src="./js/jquery.js"></script>
+	<link rel="stylesheet" href="./custom-style.css">
+
+</head>
+<body>
+	<div class="container-fluid">
+			<nav class="navbar navbar-expand-md navbar-dark bg-danger row">
+			  <a class="navbar-brand text-white" href="index.html">Quiz App</a>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+			    <span class="navbar-toggler-icon"></span>
+			  </button>
+			  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+			    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+			      <li class="nav-item ml-2 mt-1 text-light">
+			        Create Quiz
+			      </li>
+			    </ul>
+			    <span id="for-login"> 
+			    	<!-- <img class="rounded-circle user-img" alt="user-img" src="building.jpg"> -->
+			    	<a class="text-white" href="#" data-toggle="modal" data-target="#login-modal">Log In / Sign Up</a>
+			    </span>
+			    <span id="loggedin">
+			    	<!-- <img class="rounded-circle user-img" alt="user-img" src="building.jpg"> -->
+			    	<a class="text-white" href="#" id="logged-username" data-toggle="dropdown"
+			    	data-target="#dropdown-profile"> </a>
+			    	
+			    	<div class="dropdown" id="dropdown-profile">
+			    		<div class="dropdown-menu drop-menu-left">
+			    			<li class="dropdown-item" id="logout"> Log Out </li>
+			    		</div>
+			    	</div>
+			    </span>
+			  </div>
+			</nav>
+			<!-- content goes here -->
+			<div class="row mt-3" id="createInput">
+				<div class="col-12 col-md-6 border-right">
+					<form class="mb-5">
+						<div class="form-group">
+					    	<label class="h1 font-weight-light" for="title">Enter Title</label>
+					    	<input type="text" class="form-control form-control-lg" id="title" placeholder="For Example : Math">
+					    	<div class="text-danger" id="t-alert"> </div>
+						</div>
+						<div class="form-group mt-5">
+					    	<label class="h1 font-weight-light" for="subTitle">Enter Subtitle</label>
+					    	<input type="text" class="form-control form-control-lg" id="subTitle" placeholder="For Example : Area">
+					    	<div class="text-danger" id="st-alert"> </div>
+						</div>
+					</form>
+					<!-- RADIO BUTTONS TO SELECT TYPE OF QUESTION -->
+					<div class="custom-control custom-radio custom-control-inline my-2">
+						<input type="radio" id="scq-radio" name="questionType" class="
+						custom-control-input" value="scq"  checked>
+						<label class="custom-control-label" for="scq-radio"> Single Choice </label>
+					</div>
+					<div class="custom-control custom-radio custom-control-inline my-2">
+							<input type="radio" id="mcq-radio" name="questionType" class="
+								custom-control-input" value="mcq"  disabled="disabled">
+							<label class="custom-control-label" for="mcq-radio"> Multiple Choice </label>
+					</div>
+					<div class="custom-control custom-radio custom-control-inline my-2">
+					  	<input type="radio" id="customRadioInline3" name="questionType" class="
+					  		custom-control-input" value="ftb" disabled="disabled">			<!-- disabled -->
+					  	<label class="custom-control-label" for="customRadioInline3"> Fill in The Blanks </label>
+					</div>
+					<div class="custom-control custom-radio custom-control-inline my-2" disabled>
+					  	<input type="radio" id="customRadioInline4" name="questionType" class="
+					  		custom-control-input" value="MTF" disabled="disabled">   		<!-- disabled -->
+					  	<label class="custom-control-label" for="customRadioInline4"> Match the Following </label>
+					</div>
+					<!-- HORIZONTAL LINE TO SEPARATE TITLE AND QUESTIONS -->
+					<div class="border-bottom my-5 d-md-none"></div>
+				</div>
+				<!-- QUESTION -->
+				<div class="col-12 col-md-6">
+					<form>
+						<div class="form-group">
+						    <label class="h3 font-weight-light" for="question"> Question </label>
+						    <textarea class="form-control" id="question" rows="3"></textarea>
+						    <div class="text-danger" id="q-alert"> </div>
+						</div>
+						<!-- ================      MULTIPLE CHOICE       ================ -->
+						<!-- <div id="mcq-div"  style="display: none">
+						<div class="form-row mb-2">
+						    <div class="col-2">
+						    	<div class="custom-control custom-checkbox">
+								  <input type="checkbox" class="custom-control-input local-cb" id="check1">
+								  <label class="custom-control-label" for="check1"> A </label>
+								</div>
+						    </div>
+						    <div class="col">
+						    	<input type="text" id="option1" class="form-control" placeholder="option 1">
+						    	<div class="text-danger" id="op1-alert"> </div>
+						    </div>
+						</div>
+						<div class="form-row mb-2">
+						    <div class="col-2">
+						    	<div class="custom-control custom-checkbox">
+								  <input type="checkbox" class="custom-control-input local-cb" id="check2">
+								  <label class="custom-control-label" for="check2"> B </label>
+								</div>
+						    </div>
+						    <div class="col">
+						    	<input type="text" id="option2" class="form-control" placeholder="Option 2">
+						    	<div class="text-danger" id="op2-alert"> </div>
+						    </div>
+						</div>
+						<div class="form-row mb-2">
+						    <div class="col-2">
+						    	<div class="custom-control custom-checkbox">
+								  <input type="checkbox" class="custom-control-input local-cb" id="check3">
+								  <label class="custom-control-label" for="check3"> C </label>
+								</div>
+						    </div>
+						    <div class="col">
+						    	<input type="text" id="option3" class="form-control" placeholder="Option 3">
+						    </div>
+						</div>
+						<div class="form-row mb-2">
+						    <div class="col-2">
+						    	<div class="custom-control custom-checkbox">
+								  <input type="checkbox" class="custom-control-input local-cb" id="check4">
+								  <label class="custom-control-label" for="check4"> D </label>
+								</div>
+						    </div>
+						    <div class="col">
+						    	<input type="text" id="option4" class="form-control" placeholder="Option 4">
+						    </div>
+						</div>
+						</div> -->
+						<!-- ===============      SINGLE CHOICE QUESTIONS      ================= -->
+						<div id="scq-div">
+							<div class="form-row mb-2">
+							    <div class="col-2">
+							    	<div class="custom-control custom-radio">
+									  	<input type="radio" id="radio-option-1" name="radio-options" class="
+									  		custom-control-input" value="0">
+									  	<label class="custom-control-label" for="radio-option-1"> A </label>
+									</div>
+							    </div>
+							    <div class="col">
+							    	<input type="text" id="option1" class="form-control" placeholder="option 1">
+							    	<div class="text-danger" id="op1-alert"> </div>
+							    </div>
+							</div>
+							<div class="form-row mb-2">
+							    <div class="col-2">
+							    	<div class="custom-control custom-radio">
+									  	<input type="radio" id="radio-option-2" name="radio-options" class="
+									  		custom-control-input" value="1">
+									  	<label class="custom-control-label" for="radio-option-2"> B </label>
+									</div>
+							    </div>
+							    <div class="col">
+							    	<input type="text" id="option2" class="form-control" placeholder="option 2">
+							    	<div class="text-danger" id="op2-alert"> </div>
+							    </div>
+							</div>
+							<div class="form-row mb-2">
+							    <div class="col-2">
+							    	<div class="custom-control custom-radio">
+									  	<input type="radio" id="radio-option-3" name="radio-options" class="
+									  		custom-control-input" value="2">
+									  	<label class="custom-control-label" for="radio-option-3"> C </label>
+									</div>
+							    </div>
+							    <div class="col">
+							    	<input type="text" id="option3" class="form-control" placeholder="option 3">
+							    	<div class="text-danger" id="op3-alert"> </div>
+							    </div>
+							</div>
+							<div class="form-row mb-2">
+							    <div class="col-2">
+							    	<div class="custom-control custom-radio">
+									  	<input type="radio" id="radio-option-4" name="radio-options" class="
+									  		custom-control-input" value="3">
+									  	<label class="custom-control-label" for="radio-option-4"> D </label>
+									</div>
+							    </div>
+							    <div class="col">
+							    	<input type="text" id="option4" class="form-control" placeholder="option 4">
+							    	<div class="text-danger" id="op4-alert"> </div>
+							    </div>
+							</div>
+						</div>
+						<!--  ===============       FILL IN THE BLANKS      ================= -->
+						<div id="ftb-div" style="display: none">
+							<div class="form-row mb-2">
+							    <!-- div class="col">
+							    	<input type="text" id="ftb-answer" class="form-control" placeholder="option 1">
+							    </div> -->
+							    <h4> Note: this is fill the blanks. </h4>
+							</div>
+						</div>
+					</form>
+					<button class="btn btn-info float-right mt-4" id="add"> Add </button>
+				</div>
+			</div>
+
+
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+	<!-- script -->
+
+	<script src="custom-script.js"></script>
+	<script src="localStorage-script.js"></script>
+	<script>
+			// ========   references   =========
+			var title = $("#title");
+			var subTitle = $("#subTitle");
+			var questionType = $("input[name='questionType']:checked").val();
+			var question = $("#question");
+			var option1 = $("#option1");
+			var option2 = $("#option2");
+			var option3 = $("#option3");
+			var option4 = $("#option4");
+			// =====    to store questions  ======
+			var quizArr = [];
+
+
+			// ==========     run functions on events     ============
+			
+			// show selected type questions on change...
+			$("input[name='questionType']").change(function(){
+				questionType = $("input[name='questionType']:checked").val();
+				selectedQuestionType(questionType);
+				changeOptionRef(questionType);
+			});
+			
+			$("#add").click(addQuestion);
+			
+	</script>
+</body>
+	<script src="js/popper.js"> </script>
+	<script src="js/bootstrap.js"> </script>
+</html>
