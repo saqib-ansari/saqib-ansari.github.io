@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Calculator</title>
+	<link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+	<div class="calculator">
+		<!-- display -->
+		<div class="display-section">
+			<div class="input-box">
+				<!-- // inputMode = 'none' is for preventing keyboard popup on mobile -->
+				<textarea id="input" rows="1" value="" inputmode="none" spellcheck="false"></textarea>
+			</div>
+			<div id="result"></div>
+		</div>
+		<!-- buttons -->
+		<div class="button-section" id="buttonSection">
+			<div class="key-wrapper">
+				<button class="key" value='('>(</button>
+			</div>
+			<div class="key-wrapper">
+				<button class="key" value=')'>)</button>
+			</div>
+			<div class="key-wrapper">
+				<button class="key" action="delete" value='D'>D</button>
+			</div>
+			<div class="key-wrapper">
+				<button class="key" action="clear" value='C'>C</button>
+			</div>
+
+			<div class="key-wrapper">
+				<button class="key" value='7'>7</button>
+			</div>
+			<div class="key-wrapper">
+				<button class="key" value='8'>8</button>
+			</div>
+			<div class="key-wrapper">
+				<button class="key" value='9'>9</button>
+			</div>
+			<div class="key-wrapper">
+				<button class="key" value='/'>/</button>
+			</div>
+
+			<div class="key-wrapper">
+				<button class="key" value='4'>4</button>
+			</div>
+			<div class="key-wrapper">
+				<button class="key" value='5'>5</button>
+			</div>
+			<div class="key-wrapper">
+				<button class="key" value='6'>6</button>
+			</div>
+			<div class="key-wrapper">
+				<button class="key" value='x'>x</button>
+			</div>
+
+			<div class="key-wrapper">
+				<button class="key" value='1'>1</button>
+			</div>
+			<div class="key-wrapper">
+				<button class="key" value='2'>2</button>
+			</div>
+			<div class="key-wrapper">
+				<button class="key" value='3'>3</button>
+			</div>
+			<div class="key-wrapper">
+				<button class="key" value='-'>-</button>
+			</div>
+
+			<div class="key-wrapper">
+				<button class="key" value='.'>.</button>
+			</div>
+			<div class="key-wrapper">
+				<button class="key" value='0'>0</button>
+			</div>
+			<div class="key-wrapper">
+				<button class="key" action="equalTo" value='='>=</button>
+			</div>
+			<div class="key-wrapper">
+				<button class="key" value='+'>+</button>
+			</div>
+
+		</div>
+	</div>
+</body>
+
+<script src="./script.js"></script>
+</html>
