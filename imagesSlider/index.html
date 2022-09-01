@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title> Images Slider </title>
+		<link rel="stylesheet" href="./styles.css">
+	</head>
+	<body>
+		<div class="slideShow" id="slideShow-container">
+			<div class="images-container" id="images-container">
+				<!-- user's selected images appends here..  -->
+			</div>
+
+			<button class="btn-left" onclick="slideLeft()">&larr;</button>
+			<button class="btn-right" onclick="slideRight()">&rarr;</button>
+		</div>
+
+		<div class="flex-center">
+			<button class="btn-md" onclick="autoSlide()">Auto</button>
+			<button class="btn-md" onclick="stopAutoSlide()">Stop</button>
+			<button class="btn-md" onclick="fullScreen()">Full Screen</button>
+		</div>
+
+		<div class="flex-center">
+			<div class="inputFile-box">
+				<input class="form-control" type="file" accept="image/*" id="inputFilesMultiple" multiple>
+			</div>
+			<button class="btn-sm" type="button" onclick="addFilesToSlider()" id="addFilesBtn">Add Slides</button>
+			<button class="btn-sm" type="button" onclick="removeAllSlides()">Remove All Slides</button>
+		</div>
+	
+		<script src="./script.js"></script>
+		<script src="./userInputScript.js"></script>
+	</body>
+</html>
