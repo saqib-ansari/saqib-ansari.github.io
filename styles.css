@@ -77,8 +77,14 @@ main {
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .card a h1 {
     font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .card a h1 {
+    font-size: 20px;
   }
 }

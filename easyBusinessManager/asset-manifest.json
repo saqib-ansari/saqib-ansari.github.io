@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/easyBusinessManager/static/css/main.22fdca0e.chunk.css",
+    "main.js": "/easyBusinessManager/static/js/main.9e81059f.chunk.js",
+    "main.js.map": "/easyBusinessManager/static/js/main.9e81059f.chunk.js.map",
+    "runtime-main.js": "/easyBusinessManager/static/js/runtime-main.48dcba81.js",
+    "runtime-main.js.map": "/easyBusinessManager/static/js/runtime-main.48dcba81.js.map",
+    "static/js/2.1068b6fd.chunk.js": "/easyBusinessManager/static/js/2.1068b6fd.chunk.js",
+    "static/js/2.1068b6fd.chunk.js.map": "/easyBusinessManager/static/js/2.1068b6fd.chunk.js.map",
+    "static/js/3.0c10d562.chunk.js": "/easyBusinessManager/static/js/3.0c10d562.chunk.js",
+    "static/js/3.0c10d562.chunk.js.map": "/easyBusinessManager/static/js/3.0c10d562.chunk.js.map",
+    "index.html": "/easyBusinessManager/index.html",
+    "static/css/main.22fdca0e.chunk.css.map": "/easyBusinessManager/static/css/main.22fdca0e.chunk.css.map",
+    "static/js/2.1068b6fd.chunk.js.LICENSE.txt": "/easyBusinessManager/static/js/2.1068b6fd.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.48dcba81.js",
+    "static/js/2.1068b6fd.chunk.js",
+    "static/css/main.22fdca0e.chunk.css",
+    "static/js/main.9e81059f.chunk.js"
+  ]
+}
